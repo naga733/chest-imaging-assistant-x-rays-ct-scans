@@ -1,0 +1,328 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  color: #fff;
+}
+
+
+.upload-page {
+  background: url('../assets/radiology_bg.png') no-repeat left center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0,0,0,0.6);
+  padding: 12px 30px;
+  backdrop-filter: blur(6px);
+}
+
+.nav-title .frame {
+  border: 2px solid #ffffffaa;
+  padding: 8px 18px;
+  border-radius: 12px;
+  font-size: 22px;
+  font-weight: bold;
+  background: rgba(255,255,255,0.1);
+}
+
+.nav-links a {
+  margin: 0 14px;
+  text-decoration: none;
+  color: white;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #64ffda;
+}
+
+.content-area {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+  padding: 40px 70px ;
+}
+
+.upload-box {
+  width: 420px;
+  background: rgba(0, 0, 0, 0.4); /* Added black tint */
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 60px 40px;
+  text-align: center;
+  backdrop-filter: blur(6px); /* Slightly increased blur for depth */
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 0 15px #ADD8E6,
+    0 0 25px #4682B4;
+}
+
+.upload-box:hover {
+  box-shadow: 
+    0 0 20px #7F909E,
+    0 0 30px #7F909E;
+  border-color: #7F909E;
+}
+
+.upload-description {
+  font-size: 1.2rem; /* or 20px */
+  font-weight: 700;
+  color: #fff; /* optional, for better visibility */
+  margin-bottom: 20px;
+}
+
+
+
+/*backdrop-filter: none;*/
+.upload-description {
+  font-size: 18px;
+  color: #80d8ff;
+  margin-bottom: 25px;
+}
+
+.upload-icon {
+  margin-bottom: 15px;
+  color: #f4f2f2;
+}
+
+.upload-icon p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.upload-instruction {
+  font-size: 13px;
+  margin-bottom: 25px;
+  color: #FF4500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.analyze-button {
+  margin-top: 30px;
+  padding: 15px 40px;
+  font-size: 1.1em;
+  font-weight: 600;
+  border: none;
+  border-radius: 40px;
+  background: linear-gradient(to right, #ff4500, #ffaa00);
+  color: rgb(12, 12, 12);
+  cursor: pointer;
+  animation: fireGlow 1.8s infinite ease-in-out;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.analyze-button:hover {
+  transform: scale(1.05);
+}
+
+.upload-instruction-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.upload-instruction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00e5ff;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: transform 0.2s ease;
+}
+
+.upload-instruction:hover {
+  transform: scale(1.02);
+}
+
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  top: 25px;
+  left: -40px;
+  width: 280px;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #FF4500;
+  padding: 14px;
+  border-radius: 10px;
+  z-index: 10;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+  font-size: 0.9em;
+  backdrop-filter: blur(5px);
+  transition: opacity 0.3s ease;
+}
+
+.tooltip-text ul {
+  margin: 0;
+  padding-left: 15px;
+}
+
+.tooltip-text li {
+  margin-bottom: 8px;
+}
+
+.upload-instruction-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+@keyframes fireGlow {
+  0% {
+    box-shadow: 
+      0 0 5px rgba(0, 0, 0, 0.9), 
+      0 0 10px #ff4500, 
+      0 0 20px #ffaa00, 
+      0 0 30px #b22222;
+  }
+  20% {
+    box-shadow: 
+      0 0 10px rgba(0, 0, 0, 0.8), 
+      0 0 15px #ffaa00, 
+      0 0 25px #ff4500, 
+      0 0 35px #b22222;
+  }
+  40% {
+    box-shadow: 
+      0 0 5px rgba(0, 0, 0, 0.85), 
+      0 0 20px #ff4500, 
+      0 0 30px #ffaa00, 
+      0 0 40px #b22222;
+  }
+  60% {
+    box-shadow: 
+      0 0 15px rgba(0, 0, 0, 0.75), 
+      0 0 25px #b22222, 
+      0 0 35px #ffaa00, 
+      0 0 45px #ff4500;
+  }
+  80% {
+    box-shadow: 
+      0 0 10px rgba(0, 0, 0, 0.9), 
+      0 0 15px #ffaa00, 
+      0 0 25px #ff4500, 
+      0 0 35px #b22222;
+  }
+  100% {
+    box-shadow: 
+      0 0 5px rgba(0, 0, 0, 1), 
+      0 0 10px #ff4500, 
+      0 0 20px #ffaa00, 
+      0 0 30px #b22222;
+  }
+}
+
+/* Fade + move animation for navbar and upload box */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.move-effect {
+  animation: bounceIn 0.9s ease-in-out;
+}
+
+
+
+.about-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* allows background interaction */
+  z-index: 999; /* show on top */
+}
+
+.about-modal-box {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 800px;
+  max-height: 80vh;
+  background-color: #1c1f24; /* light background, semi-transparent */
+  padding: 2rem;
+  border-radius: 16px;
+  overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  pointer-events: auto; /* allow modal interaction */
+  backdrop-filter: blur(4px); /* optional, creates modern look */
+}
+
+.scrollable-list {
+  max-height: 50vh;
+  overflow-y: auto;
+  margin-top: 1rem;
+}
+
+.about-modal-box h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.about-modal-box ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.about-modal-box li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.about-modal-box button {
+  display: block;
+  margin: 1rem auto 0;
+  padding: 0.5rem 1.5rem;
+  background-color: #b34e00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.about-modal-box button:hover {
+  background-color: #b34e00;
+}
+
+.scrollable-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollable-list::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2); /* translucent white */
+  border-radius: 10px;
+}
+
+.scrollable-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+h2 {
+  color: #00e5ff;
+}
+

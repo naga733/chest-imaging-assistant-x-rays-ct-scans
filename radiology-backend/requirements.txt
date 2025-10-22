@@ -1,0 +1,7 @@
+flask==2.3.2
+tensorflow>=2.10.0  # Changed to accept newer versions
+numpy==1.23.5
+opencv-python-headless==4.7.0.72
+werkzeug==2.3.7
+flask-cors==4.0.0
+python-dotenv==1.0.0

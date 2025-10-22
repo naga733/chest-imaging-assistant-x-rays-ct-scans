@@ -1,0 +1,46 @@
+.processing-page {
+  background: linear-gradient(135deg, #000608, #00060c);
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.progress-indicator-container {
+  text-align: center;
+  width: 60%;               /* Reduced width */
+  max-width: 300px;         /* Reduced max-width */
+}
+
+.loading-text {
+  font-size: 18px;          /* Reduced from 24px */
+  font-weight: bold;
+  color: #00ffff;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+.progress-bar {
+  height: 12px;             /* Reduced from 20px */
+  background: rgba(0, 255, 255, 0.1);
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #00ffff;
+  width: 0;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 8px #00ffff, 0 0 12px #00ffff;
+}
+
+.progress-percent {
+  margin-top: 8px;
+  font-size: 16px;          /* Reduced from 22px */
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+}

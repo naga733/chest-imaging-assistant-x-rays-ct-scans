@@ -1,0 +1,211 @@
+.diagnosis-heading {
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: "Segoe UI", sans-serif;
+  color: white;
+  margin-bottom: 30px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.diagnosis-heading {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 0px; /* optional spacing from edges */
+}
+
+.highlight-left,
+.highlight-right {
+  color: #ff6b00; /* fiery orange */
+  font-style: italic;
+  font-family: 'Georgia', serif;
+  margin-right: 150px;
+  margin-left: 90px;
+}
+
+
+
+.results-header {
+  
+  display: inline-block; /* ensures box only wraps content */
+  margin: 0 auto 50px;
+  padding: 15px 30px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 0.2);
+  color: #22A7F0;
+  font-weight: bold;
+  font-size: 1.5rem;
+  animation: slideInDown 1s ease;
+}
+
+
+.disease-list {
+  margin-bottom: 50px;
+}
+
+.disease-card {
+  padding: 20px;
+  background: rgba(0,0,0,0.6) !important;  /* transparent glassy */
+  border: 2px solid rgba(255, 255, 255, 0.6) !important;
+  border-radius: 20px !important;
+  backdrop-filter: blur(18px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+  transition: all 0.3s ease-in-out !important;
+  color: white !important;
+  text-align: center !important;
+  animation: fadeInUp 0.5s ease-in-out !important;
+}
+.disease-card:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 14px 32px rgba(255, 107, 0, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+
+.image-container {
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 1); /* dark transparent background */
+  border: 3px solid rgba(255, 255, 255, 0.5); /* glowing border */
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow:  
+    0 0 15px #ADD8E6,
+    0 0 25px #4682B4;
+  transition: all 0.3s ease;
+  text-align: center;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.8s ease-in-out;
+  color:#f0f0f0
+}
+
+
+.toggle-group {
+  margin-top: 20px;
+}
+
+.MuiToggleButton-root {
+  border-radius: 14px !important;
+  font-weight: 600;
+  text-transform: none;
+  padding: 12px 24px;
+  margin: 0 10px;
+  background-color: #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.MuiToggleButton-root.Mui-selected {
+  background: linear-gradient(145deg, #2196f3, #21cbf3) !important;
+  color: white !important;
+  box-shadow: 0 6px 15px rgba(33, 203, 243, 0.3);
+}
+
+.MuiToggleButton-root:hover {
+  background-color: #e3f2fd !important;
+}
+
+.action-buttons {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.action-buttons button {
+  margin: 0 16px;
+  padding: 12px 26px;
+  border-radius: 16px;
+  font-weight: 600;
+  background: linear-gradient(to right, #2196f3, #21cbf3);
+  color: white;
+  box-shadow: 0 8px 20px rgba(33, 203, 243, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-buttons button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(33, 203, 243, 0.6);
+}
+
+.footer {
+  margin-top: 60px;
+  text-align: center;
+  color: #06c944;
+  font-size: 14px;
+}
+
+
+
+/* Grad-CAM scroll section */
+.gradcam-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px 0;
+  gap: 18px;
+  scrollbar-width: thin;
+  scrollbar-color: #aaa transparent;
+}
+
+.gradcam-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.gradcam-scroll-container::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 10px;
+}
+
+.gradcam-image {
+  flex: 0 0 auto;
+  height: 220px;
+  border-radius: 20px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.4); /* black translucent background */
+  border: 3px solid rgba(255, 255, 255, 0.8); /* glowing border */
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+
+.gradcam-image:hover {
+  transform: scale(1.06);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .results-container {
+    padding: 30px 20px;
+  }
+
+  .MuiToggleButton-root {
+    margin: 6px 6px;
+    padding: 10px 16px;
+  }
+
+  .action-buttons button {
+    margin: 10px 8px;
+    width: 100%;
+  }
+}
