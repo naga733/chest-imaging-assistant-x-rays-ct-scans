@@ -1,8 +1,8 @@
 # SmartChest AI : Chest Imaging Assistant for X-rays and CT-scans
 
-SmartChest AI is an intelligent, multimodal pipeline for automated analysis of chest radiology images — including both 2D X-rays and 3D CT scans. It supports disease detection through explainable visualizations (e.g., Grad-CAM for X-rays) and generates structured diagnostic reports (Findings & Impressions) from CT volumes using large language models.
+SmartChest AI is a multimodal system for automatically analyzing chest radiology images, including both 2D X-rays and 3D CT scans. It detects diseases, provides explainable visualizations (like Grad-CAM for X-rays), and generates structured diagnostic reports - complete with Findings and Impressions- directly from CT data using large language models. 
 
-The system combines a pretrained CT visual encoder (CT-ViT / CT-CLIP) with lightweight fine-tuning of a modern language model (LLaMA 3.1, 8B), optimized with 8-bit quantization (bitsandbytes) and LoRA adapters — enabling CT-to-text generation even on modest hardware like Google Colab (T4 GPU).
+Under the hood, the system combines a pretrained CT visual encoder (CT-ViT or CT-CLIP) with a fine-tuned LLaMA 3.1 (8B) language model. It uses 8-bit quantization (via bitsandbytes) and LoRA adapters, which makes CT-to-text generation efficient enough to run on affordable hardware, such as Google Colab T4 GPU.
 
 **NOTE** : This project is a proof-of-concept and is not a clinical diagnostic tool.
 
