@@ -34,7 +34,15 @@ CT volumes are large and require weeks of training on high-end GPUs to learn rob
 - Downloadable Reports & Visuals Option to download PDF reports, heatmap overlays, and predictions for offline reference or record-keeping.
 
 ---
+## Explanation of CT scan pipeline in Simple terms
+1. A Ct scan isn't a single image, it's a stack of hundreds of slices that forms a 3D structure of the chest. Before doing anything with it, we first trim the pixel values to meaningful range (called HU windowing) so lungs and soft tissue stand out clearly. Then we resize and normalize the slices so every scan looks similar.
+2. Used a Vision Transformer trained specifically on CT-scans to understand what's inside the image. CT-ViT looks at the scan the way a radiologist would: it scans through slices, picks out patterns( nodules, textures, densities), and turns that into numberical information called embeddings. Like compact summaries.
+3. The CT encoder produces 512 dimensional vectors, but LLM expects a much larger input(4096 dims). The projection layer reshapes the CT information into the format that LLM expects.
+4. We feed it into the LLM where it uses its language skills to turn that information into a written radiology report.
+5. LLaMA has billions of parameters, and updating them all would require a massive GPU. LoRA solves this by adding small "training patches" on top of the model. During training, we only update these patches and leave the main model untouched. This makes fine-tuning possible even on less computational power.
+6. After training, the model can take a new, unseen CT scan and produce a report in plain English. It describes what it sees and generates a report.
 
+---
 ## Tech Stack
 
 | Layer         | Technologies                                                                 |
@@ -47,7 +55,6 @@ CT volumes are large and require weeks of training on high-end GPUs to learn rob
 | Deployment    | Localhost (Flask + React) with future support for Heroku, AWS, etc.         |
 
 ---
-
 ## Real-World Motivation
 Manual diagnosis of chest radiology is time-consuming and often inconsistent across practitioners. SmartChest AI addresses:
 
