@@ -49,8 +49,8 @@ CT volumes are large and require weeks of training on high-end GPUs to learn rob
 |---------------|------------------------------------------------------------------------------|
 | Frontend      | React.js, Material-UI, CSS, Axios, Framer Motion                            |
 | Backend       | Flask, Python, TensorFlow, PyTorch, OpenCV                                  |
-| Models        | DenseNet-121 (X-ray), CT-ViT (3D ViT for CT), Mistral-7B (LLM)              |
-| NLP           | HuggingFace Transformers, LoRA adapter, 4-bit quantization (bitsandbytes)   |
+| Models        | DenseNet-121 (X-ray), CT-ViT (3D ViT for CT), LLaMA-8B (LLM)              |
+| NLP           | Transformers, LoRA adapter, 8-bit quantization (bitsandbytes)   |
 | Visualization | Grad-CAM, ROC curves, Matplotlib                                            |
 | Deployment    | Localhost (Flask + React) with future support for Heroku, AWS, etc.         |
 
